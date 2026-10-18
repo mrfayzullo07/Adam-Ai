@@ -1,0 +1,26 @@
+# Netlify: Base directory = frontend (Netlify UI'da yoki repo ildizidan deploy qilinganda)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # VITE_API_URL Netlify -> Site configuration -> Environment variables da beriladi
+  # (Railway backend manzili, masalan https://adam-backend.up.railway.app)
+
+# SPA: mavjud fayllar (assets, worklets, adam.svg) o'zi beriladi, qolgan yo'llar index.html'ga
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "microphone=(self)"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
