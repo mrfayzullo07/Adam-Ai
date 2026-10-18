@@ -1,0 +1,1 @@
+"""Vaziyatli darslar katalogi."""

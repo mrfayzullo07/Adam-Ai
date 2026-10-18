@@ -1,0 +1,18 @@
+fastapi==0.143.3
+uvicorn[standard]==0.54.0
+aiogram==3.31.0
+google-genai==2.31.0
+SQLAlchemy[asyncio]==2.1.5
+asyncpg==0.32.0
+aiosqlite==0.22.1
+redis==8.1.0
+python-dotenv==1.2.4
+websockets==16.1.1
+numpy==2.4.6
+pydantic==2.13.5
+pydantic-settings==2.16.0
+
+# test
+pytest==9.1.1
+pytest-asyncio==1.4.0
+httpx==0.28.1
